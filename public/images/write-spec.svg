@@ -1,0 +1,13 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#EEF4ED"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="418" height="86" rx="18" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="124" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">Step 10 / 把需求整理成 Spec</text>
+  <rect x="146" y="252" width="904" height="492" rx="28" fill="#FFFFFF" stroke="#243444" stroke-width="6"/>
+  <text x="192" y="336" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="32" font-weight="700">Spec Checklist</text>
+  <text x="204" y="414" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">1. User Story</text>
+  <text x="204" y="474" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">2. Input / Output</text>
+  <text x="204" y="534" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">3. Rules</text>
+  <text x="204" y="594" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">4. Test Case</text>
+  <text x="204" y="654" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">5. Notes</text>
+</svg>

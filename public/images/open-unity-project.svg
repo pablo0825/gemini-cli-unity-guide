@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#EEF3FA"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="462" height="86" rx="18" fill="#B9D9F7" stroke="#243444" stroke-width="6"/>
+  <text x="124" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="39" font-weight="700">Step 7 / 進入 Unity 專案根目錄</text>
+  <rect x="110" y="250" width="980" height="136" rx="28" fill="#172A3D"/>
+  <text x="148" y="326" fill="#F6F9FF" font-family="Consolas, monospace" font-size="32">cd "C:\你的 Unity 專案資料夾"</text>
+  <text x="148" y="368" fill="#9FD0FF" font-family="Consolas, monospace" font-size="32">gemini</text>
+  <rect x="160" y="490" width="878" height="174" rx="28" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="204" y="570" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">讓 Agent 看到 Assets / ProjectSettings / Packages</text>
+  <text x="204" y="626" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">不要只在桌面或隨便的資料夾執行，否則它讀不到真正的 Unity 專案。</text>
+</svg>

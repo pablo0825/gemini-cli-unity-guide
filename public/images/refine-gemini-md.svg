@@ -1,0 +1,13 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#F8F4EA"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="472" height="86" rx="18" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="126" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="38" font-weight="700">Step 6 / 補齊 GEMINI.md 規則</text>
+  <rect x="110" y="248" width="980" height="464" rx="28" fill="#FFFFFF" stroke="#243444" stroke-width="6"/>
+  <text x="152" y="326" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="32" font-weight="700">你至少要寫清楚：</text>
+  <text x="164" y="404" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">• 專案目標：Unity 2D 射擊遊戲 demo</text>
+  <text x="164" y="460" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">• 輸出語言：中文說明 + 英文程式與指令</text>
+  <text x="164" y="516" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">• 風格要求：先列計畫，再修改專案</text>
+  <text x="164" y="572" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">• 約束：保持最小可玩、優先可測試</text>
+  <text x="152" y="660" fill="#4C7A44" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30" font-weight="700">規則越清楚，Agent 越不容易偏題。</text>
+</svg>

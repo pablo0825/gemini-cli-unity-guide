@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#EEF3FA"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="432" height="86" rx="18" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="126" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="42" font-weight="700">Step 3 / 進資料夾並啟動</text>
+  <rect x="112" y="244" width="976" height="148" rx="28" fill="#172A3D"/>
+  <text x="146" y="314" fill="#F6F9FF" font-family="Consolas, monospace" font-size="34">cd "C:\你的專案資料夾"</text>
+  <text x="146" y="366" fill="#9FD0FF" font-family="Consolas, monospace" font-size="34">gemini</text>
+  <text x="112" y="504" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">完成 Google 登入後，確認能看到 prompt 輸入畫面。</text>
+  <circle cx="968" cy="620" r="120" fill="#FFF2B8" stroke="#243444" stroke-width="8"/>
+  <text x="914" y="636" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="46" font-weight="700">Login</text>
+</svg>

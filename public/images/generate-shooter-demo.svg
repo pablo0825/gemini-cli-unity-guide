@@ -1,0 +1,15 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#F4F8EF"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="520" height="86" rx="18" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="122" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="38" font-weight="700">Step 8 / 生成 2D 射擊遊戲原型</text>
+  <rect x="104" y="244" width="992" height="382" rx="28" fill="#172A3D"/>
+  <text x="140" y="304" fill="#9FD0FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="26">Prompt 要說清楚</text>
+  <text x="140" y="364" fill="#F6F9FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">• 玩家移動</text>
+  <text x="140" y="416" fill="#F6F9FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">• 射擊與子彈</text>
+  <text x="140" y="468" fill="#F6F9FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">• 敵人生成與碰撞</text>
+  <text x="140" y="520" fill="#F6F9FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">• 生命值與最小可玩條件</text>
+  <text x="140" y="572" fill="#F6F9FF" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">• 先列修改計畫再開始實作</text>
+  <circle cx="966" cy="690" r="104" fill="#FFF2B8" stroke="#243444" stroke-width="8"/>
+  <text x="916" y="708" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">Demo</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#F7F2E8"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="450" height="86" rx="18" fill="#B9D9F7" stroke="#243444" stroke-width="6"/>
+  <text x="126" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">Step 4 / 理解 Context</text>
+  <circle cx="290" cy="420" r="132" fill="#DDF4CF" stroke="#243444" stroke-width="8"/>
+  <circle cx="640" cy="420" r="132" fill="#FFF2B8" stroke="#243444" stroke-width="8"/>
+  <circle cx="930" cy="420" r="132" fill="#B9D9F7" stroke="#243444" stroke-width="8"/>
+  <text x="208" y="430" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">檔案</text>
+  <text x="562" y="430" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">規則</text>
+  <text x="844" y="430" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">Prompt</text>
+  <path d="M422 420H504" stroke="#243444" stroke-width="10" stroke-linecap="round"/>
+  <path d="M772 420H798" stroke="#243444" stroke-width="10" stroke-linecap="round"/>
+  <text x="110" y="664" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">Agent 不是只讀一句 prompt；它會一起理解資料夾、文件與規則。</text>
+</svg>

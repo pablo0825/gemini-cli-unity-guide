@@ -1,0 +1,15 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#F8F4EA"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="486" height="86" rx="18" fill="#FFF2B8" stroke="#243444" stroke-width="6"/>
+  <text x="122" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="38" font-weight="700">Step 9 / 測試、除錯、再修正</text>
+  <rect x="158" y="280" width="244" height="238" rx="28" fill="#B9D9F7" stroke="#243444" stroke-width="6"/>
+  <rect x="478" y="280" width="244" height="238" rx="28" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <rect x="798" y="280" width="244" height="238" rx="28" fill="#FFF2B8" stroke="#243444" stroke-width="6"/>
+  <text x="210" y="380" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">測試</text>
+  <text x="522" y="380" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">回報</text>
+  <text x="854" y="380" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">修正</text>
+  <path d="M404 398H468" stroke="#243444" stroke-width="10" stroke-linecap="round"/>
+  <path d="M724 398H788" stroke="#243444" stroke-width="10" stroke-linecap="round"/>
+  <text x="150" y="660" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="30">把 Console 錯誤、當前症狀、你想要的結果貼回 Gemini CLI，讓它聚焦修正。</text>
+</svg>

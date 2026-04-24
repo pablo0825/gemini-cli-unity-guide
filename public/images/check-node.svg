@@ -1,0 +1,13 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="42" fill="#F8F6EE"/>
+  <rect x="56" y="56" width="1088" height="788" rx="34" fill="#FFFDF7" stroke="#243444" stroke-width="8"/>
+  <rect x="96" y="96" width="350" height="86" rx="18" fill="#DDF4CF" stroke="#243444" stroke-width="6"/>
+  <text x="122" y="150" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="42" font-weight="700">Step 1 / Node.js 檢查</text>
+  <text x="112" y="260" fill="#183153" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="40" font-weight="700">Win + R → cmd → node -v</text>
+  <rect x="112" y="320" width="976" height="128" rx="28" fill="#172A3D"/>
+  <text x="152" y="394" fill="#F6F9FF" font-family="Consolas, monospace" font-size="44">node -v</text>
+  <text x="112" y="520" fill="#4C7A44" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="34" font-weight="700">看到版本號 = 環境 OK</text>
+  <text x="112" y="586" fill="#506174" font-family="Microsoft JhengHei, Noto Sans TC, sans-serif" font-size="28">如果看不到版本號，先到 nodejs.org 安裝 LTS 版本。</text>
+  <circle cx="1020" cy="654" r="108" fill="#B9D9F7" stroke="#243444" stroke-width="8"/>
+  <text x="964" y="670" fill="#183153" font-family="Consolas, monospace" font-size="54" font-weight="700">v20+</text>
+</svg>
