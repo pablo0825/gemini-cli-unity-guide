@@ -1,5 +1,10 @@
 import type { GuideChapter, GuideStep } from "../data/guide";
+import { getInstructionCopyBlocks } from "../data/guide";
 import { CopyBlock } from "./CopyBlock";
+import { DisclosureBlock } from "./DisclosureBlock";
+import { HintBlock } from "./HintBlock";
+import { StepChecklistPanel } from "./StepChecklistPanel";
+import { StepProgress } from "./StepProgress";
 
 type GuideStepViewProps = {
   chapter: GuideChapter;
@@ -10,6 +15,7 @@ type GuideStepViewProps = {
   hasNext: boolean;
   onPrevious: () => void;
   onNext: () => void;
+  onComplete: () => void;
 };
 
 export function GuideStepView({
@@ -21,71 +27,96 @@ export function GuideStepView({
   hasNext,
   onPrevious,
   onNext,
+  onComplete,
 }: GuideStepViewProps) {
+  const remainingSteps = totalSteps - currentStepNumber;
+
   return (
     <section className="guide-step-view">
-      <header className="guide-step-view__header">
-        <div>
-          <p className="eyebrow">{chapter.eyebrow}</p>
-          <h1>{step.title}</h1>
-          <p className="guide-step-view__goal">{step.goal}</p>
-        </div>
-        <div className="step-progress-badge">Step {currentStepNumber} / {totalSteps}</div>
-      </header>
+      <StepProgress
+        chapterEyebrow={chapter.eyebrow}
+        chapterTitle={chapter.title}
+        currentStepNumber={currentStepNumber}
+        estimatedTime={step.estimatedTime}
+        stepShortTitle={step.shortTitle}
+        totalSteps={totalSteps}
+      />
 
-      <div className="guide-step-view__content">
-        <article className="step-card step-card--text">
-          <div className="step-card__section">
-            <h2>這一步要完成什麼？</h2>
-            {step.summary.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+      <div className="guide-step-view__body">
+        <article className="step-content">
+          <header className="step-content__header">
+            <p className="eyebrow">{chapter.eyebrow}</p>
+            <h1>{step.title}</h1>
+            <p className="guide-step-view__goal">{step.goal}</p>
+          </header>
 
-          <div className="step-card__section">
-            <h3>完成檢查</h3>
-            <ul className="checklist">
-              {step.checklist.map((item) => (
-                <li key={item}>{item}</li>
+          {step.intro.length > 0 ? (
+            <div className="step-content__intro">
+              {step.intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
-            </ul>
-          </div>
-
-          {step.tip ? (
-            <div className="teacher-tip">
-              <strong>Tips</strong>
-              <p>{step.tip}</p>
             </div>
           ) : null}
+
+          <ol className="instruction-list">
+            {step.instructions.map((instruction, index) => {
+              const copyBlocks = getInstructionCopyBlocks(step, instruction);
+
+              return (
+                <li className="instruction-card" key={instruction.id}>
+                  <div className="instruction-card__marker">{index + 1}</div>
+                  <div className="instruction-card__content">
+                    <h2>{instruction.title}</h2>
+                    {instruction.body ? <p>{instruction.body}</p> : null}
+                    {copyBlocks.length > 0 ? (
+                      <div className="instruction-card__copy-blocks">
+                        {copyBlocks.map((block) => (
+                          <div key={block.id}>
+                            <CopyBlock block={block} />
+                            {block.caption ? (
+                              <p className="copy-block__caption-external">{block.caption}</p>
+                            ) : null}
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+                    {instruction.hint ? <HintBlock>{instruction.hint}</HintBlock> : null}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+
+          {step.dropdown ? <DisclosureBlock dropdown={step.dropdown} /> : null}
+
+          <footer className="guide-step-view__footer">
+            {hasPrevious ? (
+              <button className="nav-button" type="button" onClick={onPrevious}>
+                <span
+                  aria-hidden="true"
+                  className="nav-button__icon nav-button__icon--chevron-left"
+                />
+                <span>{"\u4e0a\u4e00\u6b65"}</span>
+              </button>
+            ) : null}
+            <button
+              className="nav-button nav-button--primary"
+              type="button"
+              onClick={hasNext ? onNext : onComplete}
+            >
+              <span>{hasNext ? "\u4e0b\u4e00\u6b65" : "\u5b8c\u6210"}</span>
+              {hasNext ? (
+                <span
+                  aria-hidden="true"
+                  className="nav-button__icon nav-button__icon--chevron-right"
+                />
+              ) : null}
+            </button>
+          </footer>
         </article>
 
-        <article className="step-card step-card--image">
-          <img src={step.image.src} alt={step.image.alt} />
-        </article>
+        <StepChecklistPanel instructions={step.instructions} remainingSteps={remainingSteps} />
       </div>
-
-      {step.copyBlocks.length > 0 ? (
-        <section className="copy-blocks">
-          <div className="copy-blocks__header">
-            <p className="eyebrow">Copy Ready</p>
-            <h2>這一步可以直接複製</h2>
-          </div>
-          <div className="copy-blocks__grid">
-            {step.copyBlocks.map((block) => (
-              <CopyBlock block={block} key={block.id} />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      <footer className="guide-step-view__footer">
-        <button className="nav-button" type="button" disabled={!hasPrevious} onClick={onPrevious}>
-          ← Previous
-        </button>
-        <button className="nav-button nav-button--primary" type="button" disabled={!hasNext} onClick={onNext}>
-          Next →
-        </button>
-      </footer>
     </section>
   );
 }

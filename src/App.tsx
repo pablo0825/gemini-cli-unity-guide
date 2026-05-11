@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import {
   chapters,
   getChapterById,
-  getChapterSteps,
   getStepById,
   guideMeta,
   stepIndexById,
   steps,
   totalSteps,
 } from "./data/guide";
-import { GuideSidebar } from "./components/GuideSidebar";
 import { GuideStepView } from "./components/GuideStepView";
 import { OverviewPage } from "./components/OverviewPage";
 
@@ -109,13 +107,7 @@ export default function App() {
         </button>
       </header>
 
-      <main className="guide-layout">
-        <GuideSidebar
-          chapters={chapters}
-          getChapterSteps={getChapterSteps}
-          activeStepId={activeStep.id}
-          onSelectStep={openStep}
-        />
+      <main>
         <GuideStepView
           chapter={activeChapter}
           step={activeStep}
@@ -125,6 +117,7 @@ export default function App() {
           hasNext={Boolean(nextStep)}
           onPrevious={() => previousStep && openStep(previousStep.id)}
           onNext={() => nextStep && openStep(nextStep.id)}
+          onComplete={openOverview}
         />
       </main>
     </div>

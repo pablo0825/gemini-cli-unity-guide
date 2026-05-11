@@ -7,6 +7,9 @@ type CopyBlockProps = {
 
 export function CopyBlock({ block }: CopyBlockProps) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
+  const isCopied = status === "copied";
+  const copyLabel =
+    status === "copied" ? "已複製" : status === "failed" ? "複製失敗，請再試一次" : "複製";
 
   useEffect(() => {
     if (status === "idle") {
@@ -28,17 +31,20 @@ export function CopyBlock({ block }: CopyBlockProps) {
 
   return (
     <article className="copy-block">
-      <div className="copy-block__header">
-        <div>
-          <p className="copy-block__type">{block.type === "command" ? "Command" : "Prompt"}</p>
-          <h4>{block.label}</h4>
-        </div>
-        <button className="copy-block__button" type="button" onClick={handleCopy}>
-          {status === "copied" ? "已複製" : status === "failed" ? "請手動複製" : "複製"}
-        </button>
-      </div>
       <pre>{block.content}</pre>
-      <p className="copy-block__caption">{block.caption}</p>
+      <button
+        aria-label={copyLabel}
+        className={`copy-block__button copy-block__button--${status}`}
+        type="button"
+        onClick={handleCopy}
+      >
+        <span
+          aria-hidden="true"
+          className={`copy-block__button-icon copy-block__button-icon--${
+            isCopied ? "check" : "copy"
+          }`}
+        />
+      </button>
     </article>
   );
 }
