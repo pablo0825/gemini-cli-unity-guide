@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  chapters,
   getChapterById,
   getStepById,
   guideMeta,
@@ -9,7 +8,6 @@ import {
   totalSteps,
 } from "./data/guide";
 import { GuideStepView } from "./components/GuideStepView";
-import { OverviewPage } from "./components/OverviewPage";
 
 function getRouteStepIdFromHash(hash: string): string | null {
   const cleaned = hash.replace(/^#/, "");
@@ -26,20 +24,16 @@ function setHashForStep(stepId: string) {
   window.location.hash = `/guide/${stepId}`;
 }
 
-function clearHash() {
-  history.replaceState(null, "", window.location.pathname + window.location.search);
-}
-
 export default function App() {
-  const [activeStepId, setActiveStepId] = useState<string | null>(() => {
+  const [activeStepId, setActiveStepId] = useState<string>(() => {
     const routeStepId = getRouteStepIdFromHash(window.location.hash);
-    return routeStepId && getStepById(routeStepId) ? routeStepId : null;
+    return routeStepId && getStepById(routeStepId) ? routeStepId : steps[0].id;
   });
 
   useEffect(() => {
     function handleHashChange() {
       const routeStepId = getRouteStepIdFromHash(window.location.hash);
-      setActiveStepId(routeStepId && getStepById(routeStepId) ? routeStepId : null);
+      setActiveStepId(routeStepId && getStepById(routeStepId) ? routeStepId : steps[0].id);
     }
 
     window.addEventListener("hashchange", handleHashChange);
@@ -51,32 +45,7 @@ export default function App() {
   }
 
   function openOverview() {
-    setActiveStepId(null);
-    clearHash();
-  }
-
-  if (!activeStepId) {
-    return (
-      <div className="app-shell">
-        <header className="app-topbar">
-          <button className="brand-button" type="button" onClick={openOverview}>
-            <span className="brand-button__badge">★</span>
-            <span>{guideMeta.title}</span>
-          </button>
-        </header>
-
-        <OverviewPage
-          title={guideMeta.title}
-          subtitle={guideMeta.subtitle}
-          audience={guideMeta.audience}
-          prerequisites={guideMeta.prerequisites}
-          outcomes={guideMeta.outcomes}
-          chapters={chapters}
-          onStart={() => openStep(steps[0].id)}
-          onJumpToChapter={openStep}
-        />
-      </div>
-    );
+    openStep(steps[0].id);
   }
 
   const activeStep = getStepById(activeStepId);
