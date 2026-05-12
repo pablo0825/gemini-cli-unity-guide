@@ -1021,8 +1021,7 @@ details[open] .disclosure-block__chevron--down {
     align-items: stretch;
   }
 
-  .guide-step-view__body,
-  .instruction-card {
+  .guide-step-view__body {
     grid-template-columns: 1fr;
   }
 
