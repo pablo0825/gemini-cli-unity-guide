@@ -2,7 +2,6 @@ type StepProgressProps = {
   chapterEyebrow: string;
   chapterTitle: string;
   currentStepNumber: number;
-  estimatedTime: string;
   stepShortTitle: string;
   totalSteps: number;
 };
@@ -11,7 +10,6 @@ export function StepProgress({
   chapterEyebrow,
   chapterTitle,
   currentStepNumber,
-  estimatedTime,
   stepShortTitle,
   totalSteps,
 }: StepProgressProps) {
@@ -19,14 +17,16 @@ export function StepProgress({
     <section className="step-progress" aria-label="課程進度">
       <div className="step-progress__meta">
         <p>
-          Step {currentStepNumber} / {totalSteps} · {stepShortTitle}
+          Step {currentStepNumber} / {totalSteps} ·{" "}
+          <span style={{ fontWeight: "var(--fw-semibold)", color: "var(--color-text-primary)" }}>
+            {stepShortTitle}
+          </span>
         </p>
         <p>
           {chapterEyebrow} · {chapterTitle}
         </p>
       </div>
-      <div className="step-progress__time">{estimatedTime}</div>
-      <div
+<div
         className="step-progress__segments"
         style={{ gridTemplateColumns: `repeat(${totalSteps}, minmax(0, 1fr))` }}
         aria-hidden="true"

@@ -256,6 +256,8 @@ The system SHALL expose the design-system.md CSS tokens globally and SHALL apply
 
 A command block or prompt block SHALL be rendered as a single-row inline code container: code text on the left and a copy icon button on the right. The container SHALL NOT include a type label, an h4 label heading, or caption text inside the container. If a block defines a caption, the caption SHALL be rendered outside and below the container by the calling component.
 
+The step progress bar segments SHALL conform to the design-system.md progress-bar specification: each segment SHALL have a height of 4px, a border-radius of 2px, and a gap of 6px between segments. The current step short title SHALL be rendered with font-weight semibold (`--fw-semibold`) and color `--color-text-primary` to distinguish it from secondary metadata text.
+
 #### Scenario: Design tokens are available globally
 - **WHEN** the application stylesheet is loaded
 - **THEN** the design-system.md token names are available from the root stylesheet scope for colors, typography, spacing, radii, elevation, motion, progress, and step states
@@ -263,6 +265,14 @@ A command block or prompt block SHALL be rendered as a single-row inline code co
 #### Scenario: Guide step page uses design system visual rules
 - **WHEN** a guide step is active
 - **THEN** the progress area, instruction list, per-page check panel, code blocks, hint blocks, dropdown block, and navigation buttons use design-system.md tokenized visual rules
+
+#### Scenario: Progress bar segments match design-system specification
+- **WHEN** the progress bar is rendered
+- **THEN** each segment has a height of 4px, a border-radius of 2px, and adjacent segments are separated by a 6px gap
+
+#### Scenario: Current step short title is visually emphasized
+- **WHEN** the progress bar is rendered
+- **THEN** the current step short title is displayed with font-weight semibold and color matching --color-text-primary, distinct from the secondary metadata text color used elsewhere in the progress area
 
 #### Scenario: Code block renders as single-row inline style
 - **WHEN** a command block or prompt block is shown
@@ -282,30 +292,13 @@ A command block or prompt block SHALL be rendered as a single-row inline code co
 
 
 <!-- @trace
-source: align-copy-block-design-system
-updated: 2026-05-11
+source: align-progress-bar-design-system
+updated: 2026-05-12
 code:
-  - public/icons/copy.svg
   - src/styles/app.css
-  - public/icons/chevron-right.svg
-  - src/components/HintBlock.tsx
-  - public/icons/check.svg
-  - .agents/skills/spectra-apply/SKILL.md
-  - public/icons/circle-alert.svg
   - src/components/StepProgress.tsx
-  - src/App.tsx
-  - .agents/skills/spectra-drift/SKILL.md
-  - public/icons/circle-check.svg
-  - src/components/DisclosureBlock.tsx
-  - src/components/StepChecklistPanel.tsx
-  - .agents/skills/spectra-discuss/SKILL.md
-  - src/components/GuideStepView.tsx
-  - src/components/CopyBlock.tsx
   - src/data/guide.ts
-  - .agents/skills/spectra-propose/SKILL.md
-  - .agents/skills/spectra-ingest/SKILL.md
-  - design-system.md
-  - public/icons/chevron-left.svg
+  - src/components/GuideStepView.tsx
 -->
 
 ---

@@ -37,8 +37,7 @@ export function GuideStepView({
         chapterEyebrow={chapter.eyebrow}
         chapterTitle={chapter.title}
         currentStepNumber={currentStepNumber}
-        estimatedTime={step.estimatedTime}
-        stepShortTitle={step.shortTitle}
+stepShortTitle={step.shortTitle}
         totalSteps={totalSteps}
       />
 

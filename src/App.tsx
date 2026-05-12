@@ -99,11 +99,10 @@ export default function App() {
     <div className="app-shell app-shell--guide">
       <header className="app-topbar">
         <button className="brand-button" type="button" onClick={openOverview}>
-          <span className="brand-button__badge">★</span>
+          <span className="brand-button__badge">
+            <img src="/icons/star.svg" alt="" width="24" height="24" aria-hidden="true" />
+          </span>
           <span>{guideMeta.title}</span>
-        </button>
-        <button className="home-link" type="button" onClick={openOverview}>
-          回首頁
         </button>
       </header>
 
