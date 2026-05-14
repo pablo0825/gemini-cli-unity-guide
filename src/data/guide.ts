@@ -53,7 +53,7 @@ export type GuideChapter = {
 };
 
 export const guideMeta = {
-  title: "Gemini CLI x Unity 2D 教學指南",
+  title: "Vibe Game 教案",
   subtitle: "從安裝工具到做出最小可玩版 2D 射擊 demo",
   audience: "會基本電腦操作，但還沒碰過 AI 工具的學生",
   prerequisites: [
