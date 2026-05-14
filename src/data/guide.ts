@@ -63,6 +63,7 @@ export const guideMeta = {
   ],
   outcomes: [
     "確認 Node.js 與 Gemini CLI 可正常使用",
+    "能用 prompt 請 Gemini CLI 幫你寫程式、並解釋看不懂的程式碼",
     "知道如何在 Unity 專案中建立 GEMINI.md 與初始化上下文",
     "能用 prompt 讓 Gemini CLI 幫你做出 2D 射擊遊戲原型",
     "知道如何把需求整理成 Spec，方便持續迭代",
@@ -74,7 +75,8 @@ export const chapters: GuideChapter[] = [
     id: "setup",
     eyebrow: "Chapter 1",
     title: "環境準備",
-    description: "先確認 Node.js、安裝 Gemini CLI，並完成第一次登入。",
+    description:
+      "確認 Node.js、安裝 Gemini CLI、完成登入，並體驗 AI 寫程式與解釋程式碼。",
     startStepId: "check-node",
   },
   {
@@ -233,6 +235,77 @@ export const steps: GuideStep[] = [
         type: "command",
         label: "啟動 Gemini CLI",
         content: "gemini",
+        caption: "",
+      },
+    ],
+  },
+  {
+    id: "try-gemini-cli",
+    chapterId: "setup",
+    title: "使用 Gemini CLI",
+    shortTitle: "使用 CLI 能力",
+    goal: "",
+    estimatedTime: "約 5 分鐘",
+    intro: [
+      "Gemini CLI 不只能回答問題，它還能直接幫你寫程式、建立檔案，同時 Gemini CLI 也能看懂別人的程式碼，並詳細解釋給你聽。",
+    ],
+    instructions: [
+      {
+        id: "輸入寫程式的-prompt",
+        title: "幫你寫一個金字塔程式",
+        body: "在 Gemini CLI 中輸入以下 prompt，請它建立一個 pyramid.js 檔案。",
+        codeBlockIds: ["create-pyramid-prompt"],
+      },
+      {
+        id: "允許寫入檔案",
+        title: "寫入檔案",
+        body: "Gemini CLI 會詢問你是否允許建立檔案，選擇 Yes（允許）讓它把程式碼寫進去。",
+      },
+      {
+        id: "執行金字塔程式",
+        title: "請 Gemini CLI 執行程式，看看結果",
+        body: "輸入以下 prompt，請 Gemini CLI 幫你執行剛才產生的 pyramid.js。",
+        codeBlockIds: ["run-pyramid-prompt"],
+        hint: "如果看到五層星星金字塔出現在畫面上，代表成功了！",
+      },
+      {
+        id: "找一段程式碼",
+        title: "搜尋程式碼",
+        body: "打開瀏覽器，搜尋「javascript bubble sort」，找任何一段你看不懂的程式碼並複製起來。",
+      },
+      {
+        id: "請-ai-解釋程式碼",
+        title: "解釋程式碼",
+        body: "複製以下 prompt，貼到 Gemini CLI 後，在冒號後面換行貼上你剛才複製的程式碼，再按 Enter 送出。",
+        codeBlockIds: ["explain-code-prompt"],
+        hint: "除了解釋以外，你也可以問它「這段程式碼有什麼問題嗎？」試試看它的反應。",
+      },
+    ],
+    image: {
+      src: "/images/try-gemini-cli.svg",
+      alt: "使用 Gemini CLI 寫程式與解釋程式碼的示意圖。",
+    },
+    copyBlocks: [
+      {
+        id: "create-pyramid-prompt",
+        type: "prompt",
+        label: "寫金字塔程式的 Prompt",
+        content:
+          "幫我建立一個 pyramid.js 檔案，裡面的程式碼會用星星（*）印出五層金字塔。",
+        caption: "",
+      },
+      {
+        id: "run-pyramid-prompt",
+        type: "prompt",
+        label: "請 Gemini 執行程式",
+        content: "請幫我執行 pyramid.js，讓我看看執行結果。",
+        caption: "",
+      },
+      {
+        id: "explain-code-prompt",
+        type: "prompt",
+        label: "解釋程式碼的 Prompt",
+        content: "請用繁體中文解釋以下這段程式碼的意思，盡量簡單易懂：",
         caption: "",
       },
     ],
@@ -405,7 +478,7 @@ export const steps: GuideStep[] = [
     goal: "",
     estimatedTime: "\u7d04 2 \u5206\u9418",
     intro: [
-      "在開始讓 Gemini 協助開發前，先建立一份 GEMINI.md，寫入協作規則。",
+      "前面我們已經體驗了 GEMINI.md 的用法。現在要在 Unity 專案資料夾裡，建立一份真正會用到的 GEMINI.md，寫入適合這個專案的協作規則。",
       "這些規則會告訴 Gemini 怎麼和你合作：不捏造資料、步步說明、主動釐清需求，以及照顧 Unity 初學者的節奏。",
     ],
     instructions: [
