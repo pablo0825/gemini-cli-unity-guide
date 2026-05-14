@@ -463,31 +463,49 @@ img {
   background: var(--color-primary-hover);
 }
 
+.copy-block__copy-action {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: start;
+}
+
+.copy-block__tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-xs);
+  background: var(--color-text-primary);
+  color: var(--color-text-on-primary);
+  font-size: var(--text-caption);
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-sm);
+}
+
 .copy-block__button {
   display: inline-grid;
-  flex: 0 0 auto;
   place-items: center;
-  align-self: start;
   width: 36px;
   height: 36px;
   padding: 0;
-  border: 1px solid var(--color-border-default);
+  border: none;
   border-radius: var(--radius-sm);
-  background: var(--color-bg-surface);
-  color: var(--color-text-primary);
+  background: transparent;
+  color: var(--color-text-muted);
   box-shadow: none;
 }
 
 .copy-block__button:hover {
   transform: none;
-  background: var(--color-bg-muted);
+  background: transparent;
+  color: var(--color-primary);
   box-shadow: none;
 }
 
 .copy-block__button--copied {
-  border-color: var(--color-success-border);
-  background: var(--color-success-bg);
-  color: var(--color-success-fg);
+  color: var(--color-success-icon);
 }
 
 .copy-block__button-icon {
@@ -1042,8 +1060,7 @@ details[open] .disclosure-block__chevron--down {
   .overview-card,
   .chapter-card,
   .guide-sidebar,
-  .step-card,
-  .copy-block {
+  .step-card {
     padding: 20px;
   }
 

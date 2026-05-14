@@ -32,19 +32,26 @@ export function CopyBlock({ block }: CopyBlockProps) {
   return (
     <article className="copy-block">
       <pre>{block.content}</pre>
-      <button
-        aria-label={copyLabel}
-        className={`copy-block__button copy-block__button--${status}`}
-        type="button"
-        onClick={handleCopy}
-      >
-        <span
-          aria-hidden="true"
-          className={`copy-block__button-icon copy-block__button-icon--${
-            isCopied ? "check" : "copy"
-          }`}
-        />
-      </button>
+      <div className="copy-block__copy-action">
+        <button
+          aria-label={copyLabel}
+          className={`copy-block__button copy-block__button--${status}`}
+          type="button"
+          onClick={handleCopy}
+        >
+          <span
+            aria-hidden="true"
+            className={`copy-block__button-icon copy-block__button-icon--${
+              isCopied ? "check" : "copy"
+            }`}
+          />
+        </button>
+        {isCopied && (
+          <span aria-live="polite" className="copy-block__tooltip">
+            已複製
+          </span>
+        )}
+      </div>
     </article>
   );
 }
