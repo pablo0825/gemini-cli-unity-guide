@@ -694,23 +694,3 @@ export function getInstructionCopyBlocks(
     .map((blockId) => copyBlockById.get(blockId))
     .filter((block): block is CopyBlock => Boolean(block));
 }
-
-export function getMissingInstructionCopyBlockIds(): Array<{
-  stepId: string;
-  instructionId: string;
-  blockId: string;
-}> {
-  return steps.flatMap((step) => {
-    const copyBlockIds = new Set(step.copyBlocks.map((block) => block.id));
-
-    return step.instructions.flatMap((instruction) =>
-      (instruction.codeBlockIds ?? [])
-        .filter((blockId) => !copyBlockIds.has(blockId))
-        .map((blockId) => ({
-          stepId: step.id,
-          instructionId: instruction.id,
-          blockId,
-        })),
-    );
-  });
-}
